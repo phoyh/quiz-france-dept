@@ -1,0 +1,572 @@
+CLEAR ,150000&,30000&
+LOCATE 10,25
+PRINT "Diskette auf Write-Enable stellen!"
+LOCATE 12,32
+PRINT "RETURN wenn bereit"
+nxxt:
+RANDOMIZE TIMER
+IF INKEY$<>CHR$(13) THEN nxxt:
+DATA 1,"Ain","Bourg"
+DATA 38,"Isere","Grenoble"
+DATA 57,"Moselle","Metz"
+DATA 3,"Allier","Moulins"
+DATA 76,"Seine-Maritime","Rouen"
+DATA 13,"Calvados","Caen"
+DATA 46,"Lot","Cahors"
+DATA 9,"Ariege","Foix"
+DATA 89,"Yonne","Auxerre"
+DATA 91,"Essonne","Evry-Petit-Bourg"
+DATA 78,"Yvelines","Versailles"
+DATA 95,"Val-d'Oise","Pontoise"
+DATA 92,"Hauts-de-Seine","Nanterre"
+DATA 94,"Val-de-Marne","Creteil"
+DATA 93,"Seine-St.Denis","Bobigny"
+DATA 75,"Seine","Paris"
+DATA 34,"Herault","Montpellier"
+DATA 48,"Lozere","Mende"
+DATA 52,"Haute-Marne","Chaumont"
+DATA 47,"Lot-et-Garonne","Agen"
+DATA 73,"Savoie","Chambery"
+DATA 4,"Basses-Alpes","Digne"
+DATA 13,"Bouches-du-Rhone","Marseille"
+DATA 56,"Morbihan","Vannes"
+DATA 20,"Corse","Ajaccio"
+DATA 74,"Haute-Savoie","Annecy"
+DATA 70,"Haute-Saone","Vesoul"
+DATA 59,"Nord","Lille"
+DATA 37,"Indre-et-Loire","Tours"
+DATA 61,"Orne","Alencon"
+DATA 5,"Hautes-Alpes","Gap"
+DATA 86,"Vienne","Poitiers"
+DATA 49,"Maine-et-Loire","Angers"
+DATA 50,"Manche","Saint-Lo"
+DATA 51,"Marne","Chalons"
+DATA 84,"Vaucluse","Avignon"
+DATA 54,"Meurthe-et-Moselle","Nancy"
+DATA 24,"Dordogne","Perigueux"
+DATA 17,"Charente-Maritime","La Rochelle"
+DATA 62,"Pas-de-Calais","Arras"
+DATA 40,"Landes","Mont-de-Marsan"
+DATA 31,"Haute-Garonne","Toulouse"
+DATA 29,"Finistere","Quimper"
+DATA 33,"Gironde","Bordeaux"
+DATA 18,"Cher","Bourges"
+DATA 64,"Basses-Pyrenees","Pau"
+DATA 67,"Bas-Rhin","Strasbourg"
+DATA 82,"Tarn-et-Garonne","Montauban"
+DATA 71,"Saone-et-Loire","Macon"
+DATA 41,"Loir-et-Cher","Blois"
+DATA 21,"Cote-d'Or","Dijon"
+DATA 63,"Puy-de-Dome","Clermont-Ferrand"
+DATA 42,"Loire","Saint-Etienne"
+DATA 81,"Tarn","Albi"
+DATA 65,"Hautes-Pyrenees","Tarbes"
+DATA 15,"Cantal","Aurillac"
+DATA 30,"Gard","Nimes"
+DATA 83,"Var","Toulon"
+DATA 6,"Alpes-Maritimes","Nice"
+DATA 80,"Somme","Amiens"
+DATA 2,"Aisne","Laon"
+DATA 8,"Ardennes","Mezieres"
+DATA 55,"Meuse","Bar-le-Duc"
+DATA 60,"Oise","Beauvais"
+DATA 22,"Cotes-du-Nord","Saint-Brieuc"
+DATA 35,"Ille-et-Vilaine","Rennes"
+DATA 53,"Mayenne","Laval"
+DATA 72,"Sarthe","Le Mans"
+DATA 27,"Eure","Evreux"
+DATA 77,"Seine-et-Marne","Melun"
+DATA 10,"Aube","Troyes"
+DATA 28,"Eure-et-Loir","Chartres"
+DATA 45,"Loiret","Orleans"
+DATA 88,"Vosges","Epinal"
+DATA 68,"Haut-Rhin","Colmar"
+DATA 25,"Doubs","Besancon"
+DATA 44,"Loire-Atlantique","Nantes"
+DATA 85,"Vendee","La Roche-sur-Yon"
+DATA 79,"Deux-Sevres","Niort"
+DATA 58,"Nievre","Nevers"
+DATA 39,"Jura","Lons-le-Saunier"
+DATA 36,"Indre","Chateauroux"
+DATA 16,"Charente","Angouleme"
+DATA 87,"Haute-Vienne","Limoges"
+DATA 23,"Creuse","Gueret"
+DATA 69,"Rhone","Lyon"
+DATA 19,"Correze","Tulle"
+DATA 43,"Haute-Loire","Le Puy"
+DATA 12,"Aveyron","Rodez"
+DATA 7,"Ardeche","Privas"
+DATA 26,"Drome","Valence"
+DATA 32,"Gers","Auch"
+DATA 11,"Aude","Carcassonne"
+DATA 66,"Pyrenees-Orientales","Perpignan"
+DATA 14,"Calvados","Caen"
+DATA 90,"Territoire de Belfort","Belfort"
+DIM na$(95),ha$(95),s(95),i$(20),i(20),ii(20)
+FOR a=0 TO 95
+READ b:READ na$(b),ha$(b)
+NEXT a
+SCREEN 2,640,240,2,2
+WINDOW 2,,,16,2
+PALETTE 1,0,0,0
+PALETTE 0,0,0,0
+PALETTE 2,1,1,1
+PALETTE 3,1,0,0
+haupt:
+FOR a=0 TO 20:w$=INKEY$:NEXT a
+CLS
+LINE (640,117)-(0,117),3
+LINE (315,0)-(316,250),3,b
+LINE (1,0)-(1,250),3
+LINE (630,0)-(630,250),3
+LINE (0,0)-(631,235),3,b
+COLOR 2,0
+LOCATE 5,56
+PRINT "Training"
+LOCATE 7,58
+PRINT "fuer"
+LOCATE 9,56
+PRINT "Anfaenger"
+LOCATE 20,56
+PRINT "Training"
+LOCATE 22,58
+PRINT "fuer"
+LOCATE 24,57
+PRINT "Profis"
+LOCATE 23,18
+PRINT "SPIEL"
+LOCATE 5,16
+PRINT "Erlernen"
+LOCATE 7,18
+PRINT "von"
+LOCATE 9,14
+PRINT "Departements"
+FOR a=0 TO 20:h=MOUSE(0):NEXT a
+mos:
+RANDOMIZE TIMER
+IF MOUSE(0)=0 THEN mos:
+v=MOUSE(3)
+vv=MOUSE(4)
+IF v<315 AND vv<117 THEN learn:
+IF v>316 AND vv<117 THEN beginner:
+IF v<315 AND vv>117 THEN play:
+IF v>316 AND vv>117 THEN profi:
+GOTO mos:
+learn:
+CLS
+LOCATE 15,30
+INPUT "ab welchem Departement";g:g=INT(g)
+IF g<1 OR g>95 THEN learn:
+CLS
+COLOR 2,0
+LOCATE 1,3:PRINT "Nummer"
+LOCATE 1,38:PRINT "Name"
+LOCATE 1,60:PRINT "Hauptstadt"
+FOR a=3 TO 28
+COLOR 3,0
+IF a/2=INT(a/2) THEN COLOR 2,0
+LOCATE a,4:PRINT a-3+g:IF a-3+g<10 THEN LOCATE a,5:PRINT a-3+g:LOCATE a,5:PRINT "0"
+LOCATE a,26:PRINT na$(a-3+g)
+LOCATE a,56:PRINT ha$(a-3+g)
+IF a-2+g>95 THEN a=28
+NEXT a
+COLOR 2,0
+LINE (192,0)-(192,250),3
+LINE (432,0)-(432,250),3
+LINE (0,11)-(640,11),3
+mus:
+FOR a=0 TO 20:h=MOUSE(0):NEXT a
+muus:
+RANDOMIZE TIMER
+IF MOUSE(0)=0 THEN muus:
+GOTO haupt:
+beginner:
+CLS
+LINE (0,0)-(640,24),3,bf
+COLOR 2,3
+LOCATE 2,26:PRINT "Was soll zu erraten sein ?"
+LINE (0,88)-(640,88),3
+LINE (0,160)-(640,160),3
+COLOR 2,0
+LOCATE 7,36
+PRINT "Nummer"
+LOCATE 16,37:PRINT "Name"
+LOCATE 25,34:PRINT "Hauptstadt"
+FOR a=0 TO 20:h=MOUSE(0):NEXT a
+mis:
+RANDOMIZE TIMER
+IF MOUSE(0)=0 THEN mis:
+vv=MOUSE(4)
+ra=-1
+IF vv<88 AND vv>24 THEN ra=0
+IF vv<160 AND vv>88 THEN ra=1
+IF vv>160 THEN ra=2
+IF ra=-1 THEN mis:
+FOR a=1 TO 95:s(a)=0:NEXT a
+lop:
+CLS
+LOCATE 15,15
+COLOR 2,0
+INPUT "Wie viele Departements sollen abgefragt werden";an:an=INT(an)
+IF an>95 OR an<1 THEN lop:
+GOSUB ratbild:
+ri=0:r=0
+FOR r=1 TO an
+LINE (319,90)-(550,150),0,bf
+COLOR 2,0
+LOCATE 3,9:PRINT r
+LOCATE 3,58:PRINT ri
+jk:
+b=INT(RND*95)+1:IF s(b)=1 THEN jk:
+s(b)=1
+IF ra<>0 THEN LOCATE 13,40:PRINT b:IF b<10 THEN LOCATE 13,41:PRINT b:LOCATE 13,41:PRINT "0"
+IF ra<>1 THEN LOCATE 15,41:PRINT na$(b)
+IF ra<>2 THEN LOCATE 17,41:PRINT ha$(b)
+LOCATE 13+ra*2,41
+INPUT "",a$:a$=UCASE$(a$)
+IF ra=0 AND VAL(a$)=b THEN GOSUB richtig:
+IF ra=1 AND UCASE$(na$(b))=a$ THEN GOSUB richtig:
+IF ra=2 AND UCASE$(ha$(b))=a$ THEN GOSUB richtig:
+IF io=1 THEN io=0:GOTO nt:
+GOSUB falsch:
+LOCATE 13+ra*2,41
+IF ra=0 THEN LOCATE 13,40:PRINT b"      ":IF b<10 THEN LOCATE 13,41:PRINT b:LOCATE 13,41:PRINT "0":LOCATE 13,43:PRINT "                          "
+IF ra=1 THEN PRINT na$(b)"                               "
+IF ra=2 THEN PRINT ha$(b)"                               "
+nt:
+RANDOMIZE TIMER
+IF INKEY$<>CHR$(13) THEN nt:
+NEXT r 
+CLS 
+COLOR 2,0
+LOCATE 13,30:PRINT "Prozent:";INT(ri/an*10000)/100"%"
+LOCATE 15,28:PRINT "Kommentar: ";
+IF ri/an>.9 THEN PRINT "Megastark":GOTO mus:
+IF ri/an>.8 THEN PRINT "Super":GOTO mus:
+IF ri/an>.7 THEN PRINT "echt cool":GOTO mus:
+IF ri/an>.6 THEN PRINT "sehr gut":GOTO mus:  
+IF ri/an>.5 THEN PRINT "gut":GOTO mus:
+IF ri/an>.4 THEN PRINT "befriedigend":GOTO mus:
+IF ri/an>.3 THEN PRINT "mangelhaft":GOTO mus:
+IF ri/an>.2 THEN PRINT "Flasche":GOTO mus:
+IF ri/an>.1 THEN PRINT "laecherlich":GOTO mus:
+PRINT "Null Ahnung":GOTO mus:
+play:
+CLS
+COLOR 3,0
+FOR a=5 TO 1 STEP -1
+LOCATE 15,38
+PRINT a:FOR b=1 TO 2500:NEXT b,a
+CLS
+FOR a=1 TO 2
+LOCATE 15,33
+PRINT "Anfaengerstadium"
+COLOR 2,0:FOR b=1 TO 3000:NEXT b,a
+CLS
+p=0:r=0:ar=0
+FOR a=1 TO 95:s(a)=0:NEXT a
+GOSUB ratbild:
+LOCATE 3,1:COLOR 3,0:PRINT "Prozent"
+ON TIMER(120) GOSUB ja:
+TIMER ON
+fg:
+COLOR 2,0
+LOCATE 3,58:PRINT p
+LOCATE 3,9:IF ar>0 THEN PRINT INT(p/ar*100)"%    "
+LINE (319,90)-(550,150),0,bf 
+jok:
+ra=INT(RND*3)
+jak:
+b=INT(RND*95)+1:IF s(b)=1 THEN jak:
+s(b)=1:ar=ar+1
+COLOR 2,0
+IF ra<>0 THEN LOCATE 13,40:PRINT b:IF b<10 THEN LOCATE 13,41:PRINT b:LOCATE 13,41:PRINT "0"
+IF ra<>1 THEN LOCATE 15,41:PRINT na$(b)
+IF ra<>2 THEN LOCATE 17,41:PRINT ha$(b)
+LOCATE 13+ra*2,41
+INPUT "",a$:a$=UCASE$(a$)
+IF ra=0 AND VAL(a$)=b THEN p=p+1:GOTO fg: 
+IF ra=1 AND UCASE$(na$(b))=a$ THEN p=p+1:GOTO fg:
+IF ra=2 AND UCASE$(ha$(b))=a$ THEN p=p+1:GOTO fg:
+LOCATE 25,31
+COLOR 3,0
+PRINT "FALSCH !"
+LOCATE 13+ra*2,41:COLOR 2,0
+IF ra=0 THEN LOCATE 13,40:PRINT b"      ":IF b<10 THEN LOCATE 13,41:PRINT b:LOCATE 13,41:PRINT "0":LOCATE 13,43:PRINT "                          "
+IF ra=1 THEN PRINT na$(b)"                               "
+IF ra=2 THEN PRINT ha$(b)"                               "
+ant:
+RANDOMIZE TIMER
+IF INKEY$<>CHR$(13) THEN ant:
+LOCATE 25,31
+COLOR 0,0
+PRINT "FALSCH !"
+COLOR 2,0:GOTO fg:
+ja: 
+CLS
+COLOR 3,0
+FOR a=0 TO 1
+LOCATE 15,33
+PRINT "Zeit ist um !"
+COLOR 2,0:FOR b=2000 TO 1 STEP -1:NEXT b,a
+CLS
+LOCATE 13,35
+COLOR 3,0:PRINT "Punkte:";:COLOR 2,0:PRINT p
+LOCATE 15,34
+IF ar<10 THEN kl=1:ar=10
+COLOR 3,0:PRINT "Prozent:";:COLOR 2,0:PRINT INT(p/ar*10000)/100"%":IF kl=1 THEN kl=0:LOCATE 15,50:COLOR 3,0:PRINT "(Prozentabzug, weil Runden<10)":COLOR 2,0
+LOCATE 17,33
+COLOR 3,0:PRINT "Ergebnis: ";:COLOR 2,0
+IF p/ar<.8 THEN PRINT "Anfaenger"
+IF p/ar=>.8 THEN PRINT "Profi"
+ante:
+RANDOMIZE TIMER
+IF INKEY$<>CHR$(13) THEN ante:
+IF p/ar<.8 THEN GOTO highscores:
+FOR a=0 TO 20:w$=INKEY$:NEXT a
+CLS
+COLOR 3,0
+FOR a=5 TO 1 STEP -1
+LOCATE 15,38
+PRINT a:FOR b=1 TO 2500:NEXT b,a
+CLS
+FOR a=1 TO 2
+LOCATE 15,35
+PRINT "Profistadium"
+COLOR 2,0:FOR b=1 TO 3000:NEXT b,a
+CLS
+ar=0
+FOR a=1 TO 95:s(a)=0:NEXT a
+GOSUB ratbild:
+LOCATE 3,2:COLOR 0,0:PRINT "Prozent":COLOR 3,0
+ON TIMER(120) GOSUB jsa:
+TIMER ON
+dfg:
+COLOR 2,0
+LOCATE 3,58:PRINT p
+LINE (319,90)-(550,150),0,bf 
+joki:
+ra=INT(RND*3)
+jakv:
+b=INT(RND*95)+1:IF s(b)=1 THEN jakv:
+s(b)=1
+COLOR 2,0
+IF ra=0 THEN LOCATE 13,40:PRINT b:IF b<10 THEN LOCATE 13,41:PRINT b:LOCATE 13,41:PRINT "0"
+IF ra=1 THEN LOCATE 15,41:PRINT na$(b)
+IF ra=2 THEN LOCATE 17,41:PRINT ha$(b)
+ko=0
+IF ra<>0 THEN
+LOCATE 13,41:INPUT "",a$:a$=UCASE$(a$)
+IF VAL(a$)=b THEN ko=1
+END IF
+IF ra<>1 THEN
+LOCATE 15,41:INPUT "",a$:a$=UCASE$(a$)
+IF UCASE$(na$(b))=a$ THEN ko=ko+1
+END IF
+IF ra<>2 THEN
+LOCATE 17,41:INPUT "",a$:a$=UCASE$(a$)
+IF UCASE$(ha$(b))=a$ THEN ko=ko+1
+END IF
+IF ko=2 THEN p=p+1:GOTO dfg:
+LOCATE 25,31
+COLOR 3,0
+PRINT "FALSCH !":COLOR 2,0
+IF ra<>0 THEN LOCATE 13,40:PRINT b"      ":IF b<10 THEN LOCATE 13,41:PRINT b:LOCATE 13,41:PRINT "0":LOCATE 13,43:PRINT "                          "
+IF ra<>1 THEN LOCATE 15,41:PRINT na$(b)"                               "
+IF ra<>2 THEN LOCATE 17,41:PRINT ha$(b)"                               "
+p=p-1:IF p<0 THEN p=0
+anet:
+RANDOMIZE TIMER
+IF INKEY$<>CHR$(13) THEN anet:
+LOCATE 25,31
+COLOR 0,0
+PRINT "FALSCH !"
+COLOR 2,0:GOTO dfg:
+jsa: 
+CLS
+COLOR 3,0
+FOR a=0 TO 1
+LOCATE 15,33
+PRINT "Zeit ist um !"
+COLOR 2,0:FOR b=2000 TO 1 STEP -1:NEXT b,a
+CLS
+LOCATE 15,35
+COLOR 3,0:PRINT "Punkte:";:COLOR 2,0:PRINT p
+antea:
+RANDOMIZE TIMER
+IF INKEY$<>CHR$(13) THEN antea:
+GOTO highscores:
+profi:
+CLS
+LINE (0,0)-(640,24),3,bf
+COLOR 2,3
+LOCATE 2,26:PRINT "Was soll zu erraten sein ?"
+LINE (0,88)-(640,88),3
+LINE (0,160)-(640,160),3
+COLOR 2,0
+LOCATE 7,30
+PRINT "Name und Hauptstadt"
+LOCATE 16,29:PRINT "Nummer und Hauptstadt"
+LOCATE 25,32:PRINT "Nummer und Name"
+FOR a=0 TO 20:h=MOUSE(0):NEXT a
+miis:
+RANDOMIZE TIMER
+IF MOUSE(0)=0 THEN miis:
+vv=MOUSE(4)
+ra=-1
+IF vv<88 AND vv>24 THEN ra=0
+IF vv<160 AND vv>88 THEN ra=1
+IF vv>160 THEN ra=2
+IF ra=-1 THEN miis:
+FOR a=1 TO 95:s(a)=0:NEXT a
+lob:
+CLS
+LOCATE 15,15
+COLOR 2,0
+INPUT "Wie viele Departements sollen abgefragt werden";an:an=INT(an)
+IF an>95 OR an<1 THEN lob:
+GOSUB ratbild:
+ri=0:r=0
+FOR r=1 TO an
+LINE (319,90)-(550,150),0,bf
+COLOR 2,0
+LOCATE 3,9:PRINT r
+LOCATE 3,58:PRINT ri
+jkl:
+b=INT(RND*95)+1:IF s(b)=1 THEN jkl:
+s(b)=1
+IF ra=0 THEN LOCATE 13,40:PRINT b:IF b<10 THEN LOCATE 13,41:PRINT b:LOCATE 13,41:PRINT "0"
+IF ra=1 THEN LOCATE 15,41:PRINT na$(b)
+IF ra=2 THEN LOCATE 17,41:PRINT ha$(b)
+ko=0
+IF ra<>0 THEN
+LOCATE 13,41:INPUT "",a$:a$=UCASE$(a$)
+IF VAL(a$)=b THEN ko=1
+END IF
+IF ra<>1 THEN
+LOCATE 15,41:INPUT "",a$:a$=UCASE$(a$)
+IF UCASE$(na$(b))=a$ THEN ko=ko+1
+END IF
+IF ra<>2 THEN
+LOCATE 17,41:INPUT "",a$:a$=UCASE$(a$)
+IF UCASE$(ha$(b))=a$ THEN ko=ko+1
+END IF
+IF ko=2 THEN GOSUB richtig:
+IF io=1 THEN io=0:GOTO nxt:
+GOSUB falsch:
+IF ra<>0 THEN LOCATE 13,40:PRINT b"      ":IF b<10 THEN LOCATE 13,41:PRINT b:LOCATE 13,41:PRINT "0":LOCATE 13,43:PRINT "                          "
+IF ra<>1 THEN LOCATE 15,41:PRINT na$(b)"                               "
+IF ra<>2 THEN LOCATE 17,41:PRINT ha$(b)"                               "
+nxt:
+RANDOMIZE TIMER
+IF INKEY$<>CHR$(13) THEN nxt:
+NEXT r 
+CLS 
+COLOR 2,0
+LOCATE 13,30:PRINT "Prozent:";INT(ri/an*10000)/100"%"
+LOCATE 15,28:PRINT "Kommentar: ";
+IF ri/an>.9 THEN PRINT "Megastark":GOTO mus:
+IF ri/an>.8 THEN PRINT "Super":GOTO mus:
+IF ri/an>.7 THEN PRINT "echt cool":GOTO mus:
+IF ri/an>.6 THEN PRINT "sehr gut":GOTO mus:  
+IF ri/an>.5 THEN PRINT "gut":GOTO mus:
+IF ri/an>.4 THEN PRINT "befriedigend":GOTO mus:
+IF ri/an>.3 THEN PRINT "mangelhaft":GOTO mus:
+IF ri/an>.2 THEN PRINT "Flasche":GOTO mus:
+IF ri/an>.1 THEN PRINT "laecherlich":GOTO mus:
+PRINT "Null Ahnung":GOTO mus:
+nxtv:
+RANDOMIZE TIMER
+IF INKEY$<>CHR$(13) THEN nxtv:
+GOTO haupt:
+ratbild:
+CLS
+LOCATE 3,3:COLOR 3,0
+PRINT "Runde:"
+LOCATE 3,50:PRINT "Richtig:"
+LOCATE 13,30:PRINT "Nummer:"
+LOCATE 15,30:PRINT "Name:"
+LOCATE 17,30:PRINT "Hauptstadt:"
+RETURN
+richtig:
+FOR a=0 TO 10
+LOCATE 25,31
+COLOR 3,0:IF a/2=INT(a/2) THEN COLOR 2,0
+IF a=10 THEN COLOR 0,0
+PRINT "RICHTIG !"
+FOR c=1 TO 1000
+NEXT c,a
+COLOR 2,0
+ri=ri+1
+io=1:RETURN
+falsch:
+FOR a=0 TO 10
+LOCATE 25,31
+COLOR 3,0:IF a/2=INT(a/2) THEN COLOR 2,0
+IF a=10 THEN COLOR 0,0
+PRINT "FALSCH !"
+FOR c=1 TO 1000
+NEXT c,a
+COLOR 2,0
+RETURN
+highscores:
+OPEN "/data/scores" FOR INPUT AS #1
+FOR a=1 TO 20
+INPUT #1,i$(a)
+INPUT #1,i(a)
+INPUT #1,ii(a)
+NEXT a
+CLOSE 1
+aa=0
+IF ar=0 THEN ii=2
+IF ar<>0 THEN ii=1
+FOR a=1 TO 20
+IF p=>i(a) AND ii(a)<=ii THEN aa=a:a=20
+IF ii(a)<ii THEN aa=a:a=20
+NEXT a
+IF aa=0 THEN zeige:
+CLS
+low:
+COLOR 2,0
+LOCATE 15,30
+INPUT "Name:",f$
+IF LEN(f$)>15 THEN CLS:LOCATE 17,50:PRINT "Zu lang":GOTO low:
+IF LEN(f$)<1 THEN CLS:GOTO low: 
+IF aa=20 THEN
+i$(20)=f$:i(20)=p
+IF ar=0 THEN ii(20)=2
+IF ar<>0 THEN ii(20)=1
+GOTO zeige:
+END IF
+FOR a=19 TO aa STEP -1
+i$(a+1)=i$(a):i(a+1)=i(a):ii(a+1)=ii(a)
+NEXT a
+i$(aa)=f$:i(aa)=p
+IF ar=0 THEN ii(aa)=2
+IF ar<>0 THEN ii(aa)=1
+zeige:
+CLS
+COLOR 3,0
+LOCATE 1,33
+PRINT "HIGHSCORSES"
+FOR a=1 TO 20
+COLOR 2,0
+IF a=aa THEN COLOR 3,0
+LOCATE a+2,17
+IF a<10 THEN PRINT " ";
+PRINT a".  "i$(a)
+LOCATE a+2,42
+IF i(a)<10 THEN PRINT " ";
+PRINT i(a)
+LOCATE a+2,50
+IF ii(a)=1 THEN PRINT "Anfaenger"
+IF ii(a)=2 THEN PRINT "Profi"
+NEXT a
+OPEN "/data/scores" FOR OUTPUT AS #1
+FOR a=1 TO 20
+PRINT #1,i$(a)
+PRINT #1,i(a)
+PRINT #1,ii(a)
+NEXT a
+CLOSE 1
+GOTO mus:
